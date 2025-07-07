@@ -23,14 +23,34 @@ document.addEventListener('DOMContentLoaded', function() {
                 "מוגדר Anti-affinity כדי לשמור את ה-DDCs על מארחי hypervisor נפרדים.",
                 "למכונות הווירטואליות של ה-DDCs אין snapshots ישנים.",
                 "גרסת ה-DDC היא גרסת LTSR CU נתמכת או אחת משתי גרסאות ה-CR האחרונות.",
-                "ה-Connection String ל-SQL מצביע על AlwaysOn Listener (ולא על שרת בודד) וכולל 'MultiSubnetFailover'.",
+                "ה-Connection String ל-SQL מצביע על AlwaysOn Listener וכולל 'MultiSubnetFailover'.",
                 "בסיסי הנתונים של ה-Site, Monitoring ו-Logging נפרדים.",
                 "Local Host Cache מאופשר, ול-DDC יש תצורת מעבד עם שקע (socket) יחיד.",
                 "מותקנות תעודות SSL על ה-DDCs להצפנת תעבורת ה-XML מול ה-StoreFront.",
-                "האפשרות 'Trust XML Requests' מאופשרת עבור אימות pass-through ו-FAS.",
-                "מנהלי Citrix Studio מבוקרים ומוקצים דרך קבוצות AD ולא משתמשים בודדים.",
+                "האפשרות 'Trust XML Requests' מאופשרת עבור אימות pass-through ו-FAS."
+            ]
+        },
+        {
+            category: "Citrix Studio",
+            items: [
+                "גרסת קונסולת ה-Studio על מחשבי המנהלים זהה לגרסת ה-DDCs.",
+                "תוכנית שיפור חווית הלקוח (CEIP) מבוטלת ב-Studio.",
+                "מודל ומהדורת הרישוי ב-Studio תואמים לרישיונות שנרכשו.",
+                "מנהלי Studio מבוקרים ומוקצים דרך קבוצות AD ולא משתמשים בודדים.",
                 "אפליקציות מפורסמות לקבוצות AD.",
-                "החיבור ל-Hypervisor משתמש בחשבון שירות עם הרשאות מינימליות."
+                "החיבור ל-Hypervisor משתמש בחשבון שירות עם הרשאות מינימליות.",
+                "לכל Hosting Resource נבחר Datastore יחיד.",
+                "כתובות StoreFront מוגדרות באמצעות GPO, ולא דרך הגדרות Delivery Group ב-Studio."
+            ]
+        },
+        {
+            category: "Citrix License Server",
+            items: [
+                "שרת הרישוי של Citrix הוא בגרסה עדכנית כדי לטפל בפגיעויות ידועות.",
+                "שרת הרישוי מעלה נתוני שימוש (telemetry) כנדרש על ידי Citrix.",
+                "הרישיונות המותקנים תואמים לרישיונות שנרכשו באתר citrix.com.",
+                "תאריכי ה-Subscription Advantage בתוקף.",
+                "נוהל התאוששות מאסון עבור שרת הרישוי מתועד ונבדק."
             ]
         },
         {
@@ -44,20 +64,36 @@ document.addEventListener('DOMContentLoaded', function() {
             ]
         },
         {
+            category: "Citrix Director",
+            items: [
+                "גרסת ה-Director תואמת לגרסת ה-DDC.",
+                "אם קיימים מספר שרתי Director, מוגדר anti-affinity.",
+                "מותקנת תעודת SSL, והגישה נאכפת בפרוטוקול HTTPS.",
+                "אתר ה-Director מאוזן עומסים, עם הצפנת SSL בין ה-LB לשרתים.",
+                "התראות Director מוגדרות לשליחת אימייל למנהלים (במהדורת Premium).",
+                "במהדורת Premium, שירות ADM HDX Insight משולב עם Director באמצעות HTTPS."
+            ]
+        },
+        {
             category: "VDA - בניית Master Image",
             items: [
                 "תהליך בניית ה-Master Image מתועד ומאוטמט (למשל, באמצעות BIS-F).",
                 "סריקת אבטחה של ה-Master Image מראה עמידה במדיניות האבטחה הארגונית.",
                 "גרסת ה-VDA מעודכנת עם תיקוני האבטחה האחרונים.",
                 "אנטי-וירוס מותקן ומותאם לסביבות non-persistent (VDI).",
-                "סוכני ניהול אחרים (כמו SCCM) מותאמים למכונות non-persistent.",
-                "נעשה שימוש ב-Citrix Optimizer או כלי דומה להסרת רכיבים מיותרים ואופטימיזציה של מערכת ההפעלה.",
-                "עדכוני Windows עדכניים.",
-                "ניהול צריכת החשמל מוגדר על High Performance.",
-                "בשימוש ב-PVS, קובץ ה-pagefile מותאם בגודלו לדיסק ה-cache, ולוגי המערכת מופנים אליו.",
+                "נעשה שימוש ב-Citrix Optimizer או כלי דומה להסרת רכיבים מיותרים ואופטימיזציה.",
                 "FSLogix מותקן בגרסה עדכנית ומשמש לנדידת החיפוש של Outlook.",
-                "Microsoft Teams מותקן באמצעות המתקין הכלל-מכונתי (machine-wide) ומעודכן תקופתית.",
-                "בסביבת NVIDIA vGPU, דרייבר ה-Guest מותקן לפני תוכנת ה-VDA."
+                "Microsoft Teams מותקן באמצעות המתקין הכלל-מכונתי ומעודכן תקופתית."
+            ]
+        },
+        {
+            category: "Citrix App Layering",
+            items: [
+                "גרסת ה-Enterprise Layer Manager (ELM) עדכנית ותומכת בגרסאות ה-CVAD וה-Windows שבשימוש.",
+                "חשבון ה-Bind עבור Directory Junction הוא חשבון שירות.",
+                "רכיב ה-ELM מגובה, או שהשכבות מיוצאות ממנו תקופתית.",
+                "ה-Connectors ל-Hypervisor משתמשים בחשבון שירות עם הרשאות מוגבלות.",
+                "האפשרות Offload Compositing מאופשרת ב-Connectors."
             ]
         },
         {
@@ -65,11 +101,10 @@ document.addEventListener('DOMContentLoaded', function() {
             items: [
                 "גרסת שרת ה-PVS תואמת לגרסת ה-DDC.",
                 "קיימים מספר שרתי PVS לטובת HA, עם anti-affinity ברמת ה-hypervisor.",
-                "לשרתי PVS יש מספיק זיכרון RAM עבור vDisk caching (כ-2-3 GB לכל vDisk פעיל).",
+                "לשרתי PVS יש מספיק זיכרון RAM עבור vDisk caching.",
                 "ה-vDisks הם בפורמט VHDX, בגודל דינמי, ועברו איחוי (defragmentation).",
                 "שיטת האתחול של ה-Target Device (כמו PXE/DHCP) היא בעלת זמינות גבוהה.",
                 "ה-Write Cache של ה-Target Device מוגדר כ-'RAM with overflow to disk'.",
-                "ה-Target Devices מפוזרים באופן שווה בין שרתי ה-PVS.",
                 "מחיצת ה-System Reserved הוסרה מתוך ה-vDisk."
             ]
         },
@@ -82,23 +117,39 @@ document.addEventListener('DOMContentLoaded', function() {
                 "מפתח הרישום הישן 'DisableGPCalculation' אינו קיים, כדי להבטיח שמדיניות תחול בהתחברות מחדש.",
                 "מיפוי כוננים, לוח (clipboard) ו-USB מהקליינט מבוטלים כברירת מחדל עבור חיבורים חיצוניים.",
                 "נאכף שימוש ב-Universal Print Driver כדי להימנע מהתקנת דרייברים נייטיב על ה-VDAs.",
-                "איכות השמע מוגדרת ל-Medium כדי לחסוך ברוחב פס.",
-                "האפשרות Adaptive Transport (EDT) מאופשרת.",
-                "האפשרות Session Reliability מאופשרת."
+                "האפשרות Adaptive Transport (EDT) מאופשרת."
             ]
         },
         {
-            category: "ניהול פרופילים ו-WEM",
+            category: "ניהול פרופילים והפניית תיקיות",
             items: [
-                "ניהול הפרופילים (Profile Management) מוגדר באמצעות GPO, ולא דרך WEM או Citrix Policy.",
+                "ניהול הפרופילים (Profile Management) מוגדר באמצעות GPO.",
                 "שרת הקבצים של הפרופילים הוא בזמינות גבוהה וקרוב ל-VDAs.",
                 "לא נעשה שימוש בשכפול DFS multi-master עבור שרתי הקבצים של הפרופילים.",
                 "הרשאות NTFS על תיקיות הפרופילים מעניקות למשתמשים הרשאות בלעדיות לתיקייה שלהם.",
                 "האפשרות Profile streaming מאופשרת, ו-Active Write Back מבוטלת.",
                 "תיקיית AppData אינה מנותבת (NOT redirected).",
-                "בשימוש ב-WEM, הוא בגרסה עדכנית, פרוס ב-HA, והסוכנים מפנים לכתובת LB.",
+                "בהפניית תיקיות, האפשרות 'Grant the user exclusive rights' מבוטלת ב-GPO."
+            ]
+        },
+        {
+            category: "Citrix Workspace Environment Management (WEM)",
+            items: [
+                "WEM הוא בגרסה עדכנית, פרוס ב-HA, והסוכנים מפנים לכתובת LB.",
                 "ב-WEM, האפשרויות CPU Optimization ו-Fast Logoff מאופשרות.",
-                "סוגי פעולות שאינם בשימוש ב-WEM מבוטלים כדי להאיץ את זמני הכניסה."
+                "סוגי פעולות שאינם בשימוש ב-WEM מבוטלים כדי להאיץ את זמני הכניסה.",
+                "מצב Offline של סוכן ה-WEM מאופשר.",
+                "סקריפט עליית המחשב מרענן את ה-cache של סוכן ה-WEM בכל אתחול של ה-VDA."
+            ]
+        },
+        {
+            category: "התקני קצה (Endpoint Devices)",
+            items: [
+                "האפשרות Browser Content Redirection מופעלת להורדת עומס וידאו מה-VDAs.",
+                "גרסת ה-Citrix Workspace app המותקנת עדכנית ומכילה תיקוני אבטחה.",
+                "תבניות ה-GPO של Workspace app עדכניות ב-SYSVOL.",
+                "ה-GPO דוחף את כתובת ה-StoreFront אל ה-Workspace app עבור המשתמשים.",
+                "אימות Pass-through (SSO) מאופשר ועובד עבור מחשבים פנימיים."
             ]
         }
     ];
