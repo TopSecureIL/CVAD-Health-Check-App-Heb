@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מחולל דוח בדיקת תקינות - Citrix CVAD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>טופס בדיקת תקינות - Citrix Virtual Apps & Desktops</h1>
+            <p>מלא את הטופס ולחץ על "הפק דוח" בסיום כדי ליצור מסמך מסכם.</p>
+        </header>
+
+        <form id="healthCheckForm">
+            <div class="form-section client-details">
+                <h2>פרטי הבדיקה</h2>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><label for="clientName">שם הלקוח:</label></td>
+                            <td><input type="text" id="clientName" name="clientName"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="checkDate">תאריך הבדיקה:</label></td>
+                            <td><input type="date" id="checkDate" name="checkDate"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="checkedBy">נבדק על ידי:</label></td>
+                            <td><input type="text" id="checkedBy" name="checkedBy"></td>
+                        </tr>
+                         <tr>
+                            <td><label for="cvadVersion">גרסת CVAD:</label></td>
+                            <td><input type="text" id="cvadVersion" name="cvadVersion"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            </form>
+
+        <button type="button" onclick="generateReport()">הפק דוח</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
